@@ -7,7 +7,6 @@
 #include <stdio.h>
 
 void screen_init();
-void screen_draw(bool *playfield, uint8_t **block, uint8_t block_len, uint8_t block_x, uint8_t block_y);
-void draw_pixel(uint8_t x, uint8_t y, bool fill);
+void screen_draw(bool *playfield, bool *block, uint8_t block_len, uint8_t block_x, uint8_t block_y);
 
 #endif
