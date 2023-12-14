@@ -1,11 +1,7 @@
 #include "draw.h"
 
-#define true 1;
-#define false 0;
 #define TOSTR(x) #x
 #define MOVETO(x, y) "\033[%hhd;%hhdH%s", y, x
-
-typedef uint8_t bool;
 
 char template[] = "\
 ┏━━━━━━━━━━━━━━━━━━━━┓\n\
@@ -45,7 +41,7 @@ void screen_init() {
 }
 
 
-void screen_draw(uint8_t *playfield, uint8_t **block, uint8_t block_x, uint8_t block_y) {
+void screen_draw(bool *playfield, uint8_t **block, uint8_t block_len, uint8_t block_x, uint8_t block_y) {
     uint8_t i;
     for (i=0; i<200; i++) {
         draw_pixel(i % 10, i / 10, playfield[i]);
