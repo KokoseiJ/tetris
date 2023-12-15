@@ -50,7 +50,7 @@ void update_screen() {
     for (y=0; y<20; y++) {
         for (x=0; x<10; x++) {
             pxl = &state[y*10+x];
-            printf(MOVETO(1, 1), "");
+            printf(MOVETO(25, 23), "");
             if(pxl->status == pxl->prev_status) continue;
             if(pxl->status) printf(MOVETO(x*2+2, y+2), "██");
             else printf(MOVETO(x*2+2, y+2), "  ");
