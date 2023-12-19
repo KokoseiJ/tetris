@@ -1,7 +1,6 @@
 #include "draw.h"
 
 #define TOSTR(x) #x
-#define MOVETO(x, y) "\033[%hhd;%hhdH%s", y, x
 
 struct pixel {
     unsigned int status : 4;
@@ -66,8 +65,9 @@ void screen_init() {
 }
 
 
-void screen_draw(bool *playfield, bool *block, uint8_t block_len, uint8_t block_x, uint8_t block_y) {
-    uint8_t i, x, y, realx, realy;
+void screen_draw(bool *playfield, bool *block, uint8_t block_len, int8_t block_x, int8_t block_y) {
+    uint8_t i;
+    int8_t x, y, realx, realy;
     for (i=0; i<200; i++) {
         set_pixel(i % 10, i / 10, playfield[i]);
     }
