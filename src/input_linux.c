@@ -78,8 +78,10 @@ TetrisKeyStatus *input_status() {
             target_key = NULL;
         }
 
-        if (target_key != NULL)
-            *target_key = (ievent.value == 1 ? 1 : 0);
+        if (target_key != NULL) {
+            *target_key = (!ievent.value ? 0 : 1);
+            printf("key %d val %d ", ievent.code, ievent.value);
+        }
     }
     return &status;
 }
